@@ -3,12 +3,14 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from "@react-navigation/native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import 'react-native-gesture-handler';
 
 //SCREENS
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
-import ReportScreen from "./screens/ReportScreen";
+import StoreScreen from "./screens/StoreScreen";
+import AboutScreen from "./screens/AboutScreen";
 
 const StackNavigator = createStackNavigator();
 
@@ -40,8 +42,15 @@ const MyStack = () => {
                 }}
             />
             <StackNavigator.Screen
-                name="Report"
-                component={ReportScreen}
+                name="Store"
+                component={StoreScreen}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <StackNavigator.Screen
+                name="About"
+                component={AboutScreen}
                 options={{
                     headerShown: false,
                 }}
